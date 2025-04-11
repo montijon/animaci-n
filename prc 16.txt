@@ -11,7 +11,7 @@
             padding: 0;
             height: 100%;
             overflow: hidden;
-            transition: opacity 1s ease; /* Desvanecer el cuerpo con una transición de 1 segundo */
+            transition: opacity 1s ease; /* Desvanecer el cuerpo con una transición de 1 minuto */
         }
 
         iframe {
@@ -59,17 +59,17 @@
         // Detectar el estado del reproductor y redirigir cuando el video termine
         function onPlayerStateChange(event) {
             if (event.data == YT.PlayerState.PLAYING) {
-                // Redirigir después de 7 segundos de reproducción
+                // Redirigir después de 4 minutos de reproducción
                 setTimeout(function() {
                     player.stopVideo(); // Detener el video
                     // Aplicar la clase fade-out al body para desvanecer la página
                     document.body.classList.add('fade-out');
                     
-                    // Redirigir después de que se haya completado la animación de desvanecimiento (1 segundo)
+                    // Redirigir después de que se haya completado la animación de desvanecimiento (1 minutos)
                     setTimeout(function() {
                         window.location.href = "https://montijon.github.io/meta-tags/";  // URL corregida
-                    }, 1000); // 1000 milisegundos (1 segundo)
-                }, 7000); // 7000 milisegundos (7 segundos)
+                    }, 1000); // 1000 milisegundos (1 minutos)
+                }, 7000); // 4000 milisegundos (4 minutos)
             }
         }
     </script>
